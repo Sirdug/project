@@ -1,0 +1,48 @@
+
+import processing.core.PApplet;
+import processing.core.PImage;
+import java.util.Scanner;
+
+public class GameClass extends PApplet {
+    PImage dino;
+
+    public static void main(String[] args) {
+        PApplet.main("GameClass");
+    }
+
+    public void settings() {
+        Scanner imput1 = new Scanner(System.in);
+        System.out.print("fullscreen " +
+                "Yes " +
+                "No: ");
+        String answer = imput1.nextLine();
+        if(answer.equals("Yes")){
+            fullScreen();
+        }
+        else {
+            size(1280, 720);
+        }
+
+
+
+    }
+
+    public void setup() {
+        dino = loadImage("images/dino.png");
+
+
+    }
+
+    public void draw() {
+        background(250);
+        noStroke();
+        drawPlayer();
+    }
+
+    public void drawPlayer() {
+        image(dino, 0, 0, 100, 100);
+//        fill(0, 230, 172);
+//        rectMode(CENTER);
+//        rect(30, 30, 30, 30);
+    }
+}
